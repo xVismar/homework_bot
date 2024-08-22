@@ -36,9 +36,11 @@ class LogFilter(logging.Filter):
     """Фильтр (пропускающий) сообщений уровня ниже LEVEL."""
 
     def __init__(self, level):
+        """Присвоение уровня логгера при создании."""
         self.level = level
 
     def filter(self, record):
+        """Условия фильтрации."""
         return record.levelno < self.level
 
 
